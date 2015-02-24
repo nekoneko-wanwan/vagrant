@@ -28,6 +28,7 @@ if [ ! -f ${DONE} ]; then
     sudo sed -i -e "s|AllowOverride None|AllowOverride All|" /etc/httpd/conf/httpd.conf
     sudo sed -i -e 's|DocumentRoot "/var/www/html"|DocumentRoot "/var/www/html/public_html"|' /etc/httpd/conf/httpd.conf
     sudo sed -i -e 's|<Directory "/var/www/html">|<Directory "/var/www/html/public_html">|' /etc/httpd/conf/httpd.conf
+    sudo sed -i -e 's|#EnableSendfile off|EnableSendfile off|' /etc/httpd/conf/httpd.conf
 
     # mod welcome.conf
     sudo sed -i -e "s|Options -Indexes|#Options -Indexes|" /etc/httpd/conf.d/welcome.conf
