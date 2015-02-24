@@ -12,7 +12,8 @@ Vagrant.configure(2) do |config|
   # config.vm.network "public_network"
 
   config.vm.provision :shell, path: "script/base.sh"
-  config.vm.synced_folder "./documentRoot", "/var/www/html/public_html"
+  # config.vm.synced_folder "./documentRoot", "/var/www/html/public_html"
+  config.vm.synced_folder "./documentRoot", "/var/www/html/public_html", type: "rsync"
 
   config.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
