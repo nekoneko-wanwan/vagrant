@@ -22,3 +22,32 @@ vagrantである程度整った仮想環境を直ぐに構築できるセット�
 * ruby, ruby-devel, rubygemsのインストール
 * sass, compassのインストール
 
+#script/phpMyAdmin.sh
+
+- Repository add
+- Apache install
+- php install
+- MySQL install
+- phpMyAdmin install
+
+---------
+
+* http://192.168.33.10/phpmyadmin/ でアクセスできる
+* phpMyAdmin のID/PWはMySQLに設定したものと同じ
+
+
+# wordpressのインストール
+
+## 前提条件
+- wpは複数インストールするが、マルチサイトは使用せずにすべてDB/ユーザを分ける
+
+## phpMyAdminでの作業
+- MySQLに必要なブログのDBを作成する
+- MySQLに上記ブログにログインする管理ユーザを作成する
+
+## 残りの作業
+- パブリックディレクトリにWPを丸ごと入れる
+- 該当ディレクトリにブラウザでアクセスして作成したDB/ユーザ名で初期化する
+
+> そのままではwp-configに書き込めないのでローカルで上書き→rsyncしてやる
+> 後ほどchownで変更してやる
