@@ -6,7 +6,7 @@ vagrantである程度整った仮想環境を直ぐに構築できるセット�
 * boxにはとりあえずcentos64を想定。boxの名前は適宜変更する。
 * ライブリロードが使えるように port:35729をforwardedする
 * private_networkでアクセスできるIPを指定
-* シェルコマンド、script/bash.shを指定
+* 実行するパッチとして、script/bash.shもしくはphpMyAdmin.shを指定
 * /var/www/html/public_html/以下を、同期フォルダとしrsyncさせる *1
 
 ※1) windowsではrsyncのインストールが必要
@@ -24,8 +24,7 @@ vagrantである程度整った仮想環境を直ぐに構築できるセット�
 
 #script/phpMyAdmin.sh
 
-- Repository add
-- Apache install
+- httpd ~ welcom.confまで同じ
 - php install
 - MySQL install
 - phpMyAdmin install
